@@ -35,23 +35,20 @@ and then initialize it in your Activity
       data2.addXValue(i, i + ":00");
     }
     chart.addData(data2);
-    
-    // Refresh the chart drawing
-    chart.invalidate();
 
 ![FancyChart Example](http://i.imgur.com/qv50v17.png)
 
-`addXValue` and `addYValue` are optional. If you don't add any, FancyChart will add 10 points on X and Y axis automatically.
+`addXValue` and `addYValue` are optional. If you don't add any, FancyChart will add ~10 points on X and Y axis automatically.
 
 onPointClickListener
 ----
 
 You can add listener when specific point is clicked
 
-    chart.setOnPointClickListener(new FancyChartListener() {
+    chart.setOnPointClickListener(new FancyChartPointListener() {
         
     	@Override
-    	public void onPointSelected(Point point) {
+    	public void onClick(Point point) {
     		Toast.makeText(MainActivity.this, "I clicked point " + point, Toast.LENGTH_LONG).show();
     	}
     });
@@ -62,9 +59,26 @@ Styling
 Use `FancyChartStyle` if needed - there are all the colors, stroke widths etc. for visual fine-tuning. For example if you don't
 want translucent background below lines set it to `false`
 
-    FancyChartStyle style = chart.getChartStyle(); // defined all colors etc.
-    style.setDrawBackgroundBelowLine(false); // default is TRUE
+    FancyChartStyle style = chart.getChartStyle();
+    style.setDrawBackgroundBelowLine(false);
     
 Developed by
 ------------
 * Sven Kapuđija
+
+License
+-------
+
+    Copyright 2012 Sven Kapuđija
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
