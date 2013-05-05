@@ -43,6 +43,19 @@ and then initialize it in your Activity
 
 `addXValue` and `addYValue` are optional. If you don't add any, FancyChart will add 10 points on X and Y axis automatically.
 
+onPointClickListener
+----
+
+You can add listener when specific point is clicked
+
+    chart.setOnPointClickListener(new FancyChartListener() {
+        
+    	@Override
+    	public void onPointSelected(Point point) {
+    		Toast.makeText(MainActivity.this, "I clicked point " + point, Toast.LENGTH_LONG).show();
+    	}
+    });
+
 Styling
 ----
 
