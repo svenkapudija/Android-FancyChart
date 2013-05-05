@@ -2,11 +2,13 @@ package com.svenkapudija.fancychart.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.svenkapudija.fancychart.FancyChart;
-import com.svenkapudija.fancychart.FancyChartStyle;
+import com.svenkapudija.fancychart.FancyChartListener;
 import com.svenkapudija.fancychart.R;
 import com.svenkapudija.fancychart.data.ChartData;
+import com.svenkapudija.fancychart.data.Point;
 
 public class MainActivity extends Activity {
 
@@ -16,8 +18,13 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		FancyChart chart = (FancyChart) findViewById(R.id.chart);
-		FancyChartStyle style = chart.getChartStyle();
-		//style.setDrawBackgroundBelowLine(false);
+		chart.setOnPointClickListener(new FancyChartListener() {
+			
+			@Override
+			public void onPointSelected(Point point) {
+				Toast.makeText(MainActivity.this, "I clicked point " + point, Toast.LENGTH_LONG).show();
+			}
+		});
 		
 		ChartData data = new ChartData(ChartData.LINE_COLOR_BLUE);
 		int[] yValues = new int[]{0, 8, 9, 18, 35, 30, 33, 32, 46, 53, 50, 42};
