@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.svenkapudija.fancychart.FancyChart;
-import com.svenkapudija.fancychart.FancyChartListener;
+import com.svenkapudija.fancychart.FancyChartPointListener;
 import com.svenkapudija.fancychart.R;
 import com.svenkapudija.fancychart.data.ChartData;
 import com.svenkapudija.fancychart.data.Point;
@@ -18,10 +18,10 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		FancyChart chart = (FancyChart) findViewById(R.id.chart);
-		chart.setOnPointClickListener(new FancyChartListener() {
+		chart.setOnPointClickListener(new FancyChartPointListener() {
 			
 			@Override
-			public void onPointSelected(Point point) {
+			public void onClick(Point point) {
 				Toast.makeText(MainActivity.this, "I clicked point " + point, Toast.LENGTH_LONG).show();
 			}
 		});
@@ -41,8 +41,6 @@ public class MainActivity extends Activity {
 			data2.addXValue(i, i + ":00");
 		}
 		chart.addData(data2);
-		
-		chart.invalidate();
 	}
 
 }

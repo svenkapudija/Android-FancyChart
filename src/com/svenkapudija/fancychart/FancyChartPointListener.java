@@ -2,8 +2,8 @@ package com.svenkapudija.fancychart;
 
 import com.svenkapudija.fancychart.data.Point;
 
-public interface FancyChartListener {
+public interface FancyChartPointListener {
 
-	public void onPointSelected(Point point);
+	public void onClick(Point point);
 	
 }

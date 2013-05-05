@@ -31,7 +31,7 @@ public class FancyChart extends View {
 	private static int TOUCH_THRESHOLD = 20;
 
 	private FancyChartStyle chartStyle;
-	private FancyChartListener onPointClickListener;
+	private FancyChartPointListener onPointClickListener;
 	
 	private List<ChartData> chartData;
 	
@@ -54,7 +54,7 @@ public class FancyChart extends View {
 		chartData.add(data);
 	}
 	
-	public void setOnPointClickListener(FancyChartListener onPointClickListener) {
+	public void setOnPointClickListener(FancyChartPointListener onPointClickListener) {
 		this.onPointClickListener = onPointClickListener;
 	}
 	
@@ -278,7 +278,7 @@ public class FancyChart extends View {
 							point.isSelected = true;
 							
 							if(onPointClickListener != null) {
-								onPointClickListener.onPointSelected(point);
+								onPointClickListener.onClick(point);
 							}
 						}
 						
