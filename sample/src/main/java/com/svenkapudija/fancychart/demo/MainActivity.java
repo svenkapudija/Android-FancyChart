@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import com.svenkapudija.fancychart.FancyChart;
 import com.svenkapudija.fancychart.FancyChartPointListener;
-import com.svenkapudija.fancychart.R;
 import com.svenkapudija.fancychart.data.ChartData;
 import com.svenkapudija.fancychart.data.Point;
 

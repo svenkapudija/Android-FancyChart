@@ -61,7 +61,14 @@ want translucent background below lines set it to `false`
 
     FancyChartStyle style = chart.getChartStyle();
     style.setDrawBackgroundBelowLine(false);
-    
+
+How to build project on Android Studio
+----
+* Clone repository
+* Open an existing Android Studio project
+* Choose build.gradle file in reprository
+
+
 Developed by
 ------------
 * Sven Kapuđija
